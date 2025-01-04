@@ -1,46 +1,99 @@
-# LexArb - AI-Powered Arbitration Platform
+# LexArb Components
 
-LexArb is a comprehensive platform that streamlines arbitration processes using AI-driven automation and intelligent workflows. The platform provides end-to-end case management, document processing, and award drafting assistance.
+AI-powered arbitration management system.
 
-## Technology Stack
+## Project Structure
 
-### Backend
-- Python 3.11+
-- FastAPI
-- PostgreSQL
-- MongoDB
-- Redis
-- LLaMA 3.1
-- RoBERTa
+```
+├── backend/
+│   ├── src/
+│   │   └── pipelines/
+│   │       ├── case_filing/      # Case management functionality
+│   │       ├── document_request/ # Document processing and storage
+│   │       ├── ai_etl/          # AI-powered document analysis
+│   │       └── award/           # Award generation and management
+│   └── tests/                   # Backend test suite
+├── frontend/
+│   ├── src/
+│   └── tests/
+├── templates/                   # Email and document templates
+└── docker-compose.yml           # Container configuration
+```
 
-### Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- shadcn/ui
+## Features
 
-## Getting Started
+- Case Filing: Generate unique case numbers and manage case lifecycle
+- Document Management: Process and organize case-related documents
+- AI ETL Pipeline: Analyze and categorize documents using LLMs
+- Award Generation: Create and manage arbitration awards
 
-### Prerequisites
-- Docker and Docker Compose
-- Poetry (Python package manager)
-- Node.js 20+
-- npm
+## Setup
 
-### Development Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jreyes-beyond/Lexarb-components.git
+   cd Lexarb-components
+   ```
 
-1. Clone the repository
-2. Set up environment variables
-3. Start development environment with docker-compose
-4. Initialize database with alembic
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+   ```
 
-## Development Guidelines
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Code Style
-- Backend: Black + isort + mypy
-- Frontend: ESLint + Prettier
+4. Run tests:
+   ```bash
+   pytest backend/tests/
+   ```
 
-### Testing
-- Backend: pytest
-- Frontend: Vitest + React Testing Library
+## Development
+
+1. Start containers:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Run migrations:
+   ```bash
+   alembic upgrade head
+   ```
+
+3. Start development server:
+   ```bash
+   uvicorn backend.src.main:app --reload
+   ```
+
+## Testing
+
+Run all tests:
+```bash
+pytest
+```
+
+Run specific test suite:
+```bash
+pytest backend/tests/test_case_filing.py
+```
+
+## Contributing
+
+1. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make changes and commit:
+   ```bash
+   git add .
+   git commit -m "Add your feature"
+   ```
+
+3. Push changes and create a pull request:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
