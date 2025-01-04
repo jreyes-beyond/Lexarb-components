@@ -1,0 +1,21 @@
+{# Base award template #}
+ARBITRATION AWARD
+
+Case Number: {{ case.number }}
+Date: {{ now.strftime('%Y-%m-%d') }}
+
+{% for section in sections %}
+{{ section.title | upper }}
+{{ '-' * section.title|length }}
+
+{{ section.content }}
+
+{% endfor %}
+
+{% if case.tribunal %}
+TRIBUNAL:
+{% for arbitrator in case.tribunal %}
+{{ arbitrator.name }}
+{% if arbitrator.role %}({{ arbitrator.role }}){% endif %}
+{% endfor %}
+{% endif %}
