@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import List
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Text, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Text, Boolean, Table
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 import enum
