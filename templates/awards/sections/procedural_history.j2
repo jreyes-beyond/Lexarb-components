@@ -1,0 +1,10 @@
+{# Procedural History section template #}
+{% if section.events %}
+This arbitration was commenced on {{ section.events[0].date.strftime('%Y-%m-%d') }} when {{ section.events[0].description }}.
+
+{% for event in section.events[1:] %}
+On {{ event.date.strftime('%Y-%m-%d') }}, {{ event.description }}.
+{% endfor %}
+{% endif %}
+
+The Tribunal was constituted on {{ section.tribunal_date.strftime('%Y-%m-%d') }}.
