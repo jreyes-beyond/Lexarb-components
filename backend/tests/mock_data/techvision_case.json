@@ -1,0 +1,49 @@
+{
+  "case_details": {
+    "case_number": "LX-2024-0127",
+    "email": "case-lx20240127@lexarb.com",
+    "claimant": "TechVision Systems Inc.",
+    "respondent": "GlobalNet Solutions Ltd.",
+    "dispute_nature": "Breach of Software Development Agreement",
+    "amount": 2500000,
+    "applicable_law": "English Law",
+    "seat": "London, UK",
+    "language": "English",
+    "arbitrators": 3
+  },
+  "initial_documents": [
+    {
+      "title": "Notice of Arbitration",
+      "type": "Legal Filing",
+      "date": "2024-01-27"
+    },
+    {
+      "title": "Software Development Agreement",
+      "type": "Contract",
+      "date": "2023-03-01"
+    },
+    {
+      "title": "Technical Specifications v1.0",
+      "type": "Technical Documentation",
+      "date": "2023-03-15"
+    },
+    {
+      "title": "Change Request Logs",
+      "type": "Project Documentation",
+      "date": "2023-12-31"
+    }
+  ],
+  "document_requests": [
+    {
+      "request_date": "2024-01-30",
+      "from": "tribunal@lexarb.com",
+      "documents": [
+        "Original technical specifications",
+        "Specification revisions",
+        "Change request logs",
+        "Related communications"
+      ],
+      "deadline": "2024-02-13"
+    }
+  ]
+}
